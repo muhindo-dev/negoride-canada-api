@@ -1031,9 +1031,6 @@ class ApiAuthController extends Controller
         if ($r->first_name == null || $r->last_name == null) {
             return $this->error('Name is required.');
         }
-        if ($r->gender == null) {
-            return $this->error('Gender is required.');
-        }
 
         // Password validation
         if ($r->password == null) {
@@ -1069,7 +1066,7 @@ class ApiAuthController extends Controller
         $user = new Administrator();
         $user->first_name = trim($r->first_name);
         $user->last_name = trim($r->last_name);
-        $user->sex = trim($r->gender);
+        $user->sex = $r->gender ? trim($r->gender) : null;
         $user->username = $phone_number;
         $user->phone_number = $phone_number;
         $user->country_name = $country_name;
