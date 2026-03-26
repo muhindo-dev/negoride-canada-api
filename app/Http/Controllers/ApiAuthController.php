@@ -489,9 +489,6 @@ class ApiAuthController extends Controller
         } else if ($_automobileType == 'police') {
             $automobileFieldKey = 'is_police';
             $automobileFieldValue = 'is_police_approved';
-        } else if ($_automobileType == 'firebrugade' || $_automobileType == 'firebrigade' || $_automobileType == 'firetruck') {
-            $automobileFieldKey = 'is_firebrugade';
-            $automobileFieldValue = 'is_firebrugade_approved';
         } else if ($_automobileType == 'delivery') {
             $automobileFieldKey = 'is_delivery';
             $automobileFieldValue = 'is_delivery_approved';

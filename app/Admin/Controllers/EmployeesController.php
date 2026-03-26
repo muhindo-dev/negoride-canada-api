@@ -420,10 +420,7 @@ class EmployeesController extends AdminController
         
         // Fire Brigade Service
         $form->html('<div class="col-md-4">');
-        $form->radio('is_firebrugade', '🚒 Fire Brigade')->options([
-            '1' => 'Yes - Available',
-            'No' => 'No',
-        ])->default('No')->help('Fire emergency support');
+ 
         $form->html('</div>');
         
         $form->html('</div>'); // end row
@@ -453,9 +450,7 @@ class EmployeesController extends AdminController
         $form->hidden('is_ambulance_approved')->default('No');
         $form->hidden('is_police_approved')->default('No');
         $form->hidden('is_breakdown')->default('No');
-        $form->hidden('is_breakdown_approved')->default('No');
-        $form->hidden('is_firebrugade')->default('No');
-        $form->hidden('is_firebrugade_approved')->default('No');
+        $form->hidden('is_breakdown_approved')->default('No'); 
 
         // Form saving logic
         $form->saving(function (Form $form) {
